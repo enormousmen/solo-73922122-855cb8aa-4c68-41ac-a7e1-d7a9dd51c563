@@ -1,0 +1,23 @@
+services:
+  app1:
+    build: .
+    environment:
+      VCF_DATA_DIR: /data
+      VCF_INSTANCE_ID: app1
+    volumes:
+      - vcfdata:/data
+    ports:
+      - "8001:8000"
+
+  app2:
+    build: .
+    environment:
+      VCF_DATA_DIR: /data
+      VCF_INSTANCE_ID: app2
+    volumes:
+      - vcfdata:/data
+    ports:
+      - "8002:8000"
+
+volumes:
+  vcfdata:
